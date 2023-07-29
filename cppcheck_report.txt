@@ -1,0 +1,1838 @@
+software/apps/memtracker/main_memtracker.c:26:19: style: Variable 'z80.memory[i]' is reassigned a value before the old one has been used. [redundantAssignment]
+    z80.memory[i] = testvar++; // should not trigger interrupt
+                  ^
+software/apps/memtracker/main_memtracker.c:25:19: note: z80.memory[i] is assigned
+    z80.memory[i] = testvar++; // triggers interrupt
+                  ^
+software/apps/memtracker/main_memtracker.c:26:19: note: z80.memory[i] is overwritten
+    z80.memory[i] = testvar++; // should not trigger interrupt
+                  ^
+software/config/startup_gcc.c:246:27: warning: The address of local variable '_init_data' might be accessed at non-zero index. [objectIndex]
+    data_init = &data_init[start_offset];
+                          ^
+software/config/startup_gcc.c:244:31: note: Address of variable taken here.
+    char *data_init = (char *)&_init_data;
+                              ^
+software/config/startup_gcc.c:246:27: note: The address of local variable '_init_data' might be accessed at non-zero index.
+    data_init = &data_init[start_offset];
+                          ^
+software/config/startup_gcc.c:250:13: warning: The address of local variable '_edata_norestore' might be accessed at non-zero index. [objectIndex]
+        data[i] = data_init[i];
+            ^
+software/config/startup_gcc.c:242:26: note: Address of variable taken here.
+    char *data = (char *)&_edata_norestore;
+                         ^
+software/config/startup_gcc.c:250:13: note: The address of local variable '_edata_norestore' might be accessed at non-zero index.
+        data[i] = data_init[i];
+            ^
+software/config/startup_gcc.c:250:28: warning: The address of local variable '_init_data' might be accessed at non-zero index. [objectIndex]
+        data[i] = data_init[i];
+                           ^
+software/config/startup_gcc.c:244:31: note: Address of variable taken here.
+    char *data_init = (char *)&_init_data;
+                              ^
+software/config/startup_gcc.c:246:17: note: Address of variable taken here.
+    data_init = &data_init[start_offset];
+                ^
+software/config/startup_gcc.c:250:28: note: The address of local variable '_init_data' might be accessed at non-zero index.
+        data[i] = data_init[i];
+                           ^
+software/config/startup_gcc.c:260:12: warning: The address of local variable '_ebss_norestore' might be accessed at non-zero index. [objectIndex]
+        bss[i] = 0;
+           ^
+software/config/startup_gcc.c:257:25: note: Address of variable taken here.
+    char *bss = (char *)&_ebss_norestore;
+                        ^
+software/config/startup_gcc.c:260:12: note: The address of local variable '_ebss_norestore' might be accessed at non-zero index.
+        bss[i] = 0;
+           ^
+software/config/startup_gcc.c:245:34: error: Subtracting pointers that point to different objects [comparePointers]
+    uint32_t start_offset = data - (char *)&_sdata;
+                                 ^
+software/config/startup_gcc.c:234:17: note: Variable declared here.
+extern uint32_t _edata_norestore;
+                ^
+software/config/startup_gcc.c:242:26: note: Address of variable taken here.
+    char *data = (char *)&_edata_norestore;
+                         ^
+software/config/startup_gcc.c:227:17: note: Variable declared here.
+extern uint32_t _sdata;
+                ^
+software/config/startup_gcc.c:245:44: note: Address of variable taken here.
+    uint32_t start_offset = data - (char *)&_sdata;
+                                           ^
+software/config/startup_gcc.c:245:34: note: Subtracting pointers that point to different objects
+    uint32_t start_offset = data - (char *)&_sdata;
+                                 ^
+software/config/startup_gcc.c:248:37: error: Subtracting pointers that point to different objects [comparePointers]
+    uint32_t size = (char *)&_edata - data;
+                                    ^
+software/config/startup_gcc.c:228:17: note: Variable declared here.
+extern uint32_t _edata;
+                ^
+software/config/startup_gcc.c:248:29: note: Address of variable taken here.
+    uint32_t size = (char *)&_edata - data;
+                            ^
+software/config/startup_gcc.c:234:17: note: Variable declared here.
+extern uint32_t _edata_norestore;
+                ^
+software/config/startup_gcc.c:242:26: note: Address of variable taken here.
+    char *data = (char *)&_edata_norestore;
+                         ^
+software/config/startup_gcc.c:248:37: note: Subtracting pointers that point to different objects
+    uint32_t size = (char *)&_edata - data;
+                                    ^
+software/config/startup_gcc.c:258:36: error: Subtracting pointers that point to different objects [comparePointers]
+    uint32_t size = (char *)&_ebss - bss;
+                                   ^
+software/config/startup_gcc.c:230:17: note: Variable declared here.
+extern uint32_t _ebss;
+                ^
+software/config/startup_gcc.c:258:29: note: Address of variable taken here.
+    uint32_t size = (char *)&_ebss - bss;
+                            ^
+software/config/startup_gcc.c:236:17: note: Variable declared here.
+extern uint32_t _ebss_norestore;
+                ^
+software/config/startup_gcc.c:257:25: note: Address of variable taken here.
+    char *bss = (char *)&_ebss_norestore;
+                        ^
+software/config/startup_gcc.c:258:36: note: Subtracting pointers that point to different objects
+    uint32_t size = (char *)&_ebss - bss;
+                                   ^
+software/external/ambiq_ble/apps/ancs/ancs_main.c:117:21: style: struct member 'Anonymous1::connInterval' is never used. [unusedStructMember]
+  uint16_t          connInterval;     /* connection interval */
+                    ^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:374:12: style: The scope of the variable 'pMsg' can be reduced. [variableScope]
+  dmEvt_t *pMsg;
+           ^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:375:13: style: The scope of the variable 'len' can be reduced. [variableScope]
+  uint16_t  len;
+            ^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:529:16: style: The scope of the variable 'pCb' can be reduced. [variableScope]
+  appConnCb_t *pCb;
+               ^
+software/external/ambiq_ble/apps/prodtest_datc/prodtest_datc_main.c:617:11: style: The scope of the variable 'str' can be reduced. [variableScope]
+  uint8_t str[] = "hello world";
+          ^
+software/external/ambiq_ble/apps/prodtest_dats/prodtest_dats_main.c:278:11: style: The scope of the variable 'str' can be reduced. [variableScope]
+  uint8_t str[] = "hello.....from dats";
+          ^
+software/external/ambiq_ble/em9304/em9304_init.c:166:12: style: The scope of the variable 'numBytesRx' can be reduced. [variableScope]
+  uint32_t numBytesRx;
+           ^
+software/external/ambiq_ble/menu/ble_menu.c:116:19: style: The scope of the variable 'devInfo' can be reduced. [variableScope]
+    appDevInfo_t *devInfo;
+                  ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:206:34: style: The statement 'if (amdtpCb->txState!=AMDTP_STATE_TX_IDLE) amdtpCb->txState=AMDTP_STATE_TX_IDLE' is logically equivalent to 'amdtpCb->txState=AMDTP_STATE_TX_IDLE'. [duplicateConditionalAssign]
+            if (amdtpCb->txState != AMDTP_STATE_TX_IDLE)
+                                 ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:211:34: note: Assignment 'amdtpCb->txState=AMDTP_STATE_TX_IDLE'
+                amdtpCb->txState = AMDTP_STATE_TX_IDLE;
+                                 ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:206:34: note: Condition 'amdtpCb->txState!=AMDTP_STATE_TX_IDLE' is redundant
+            if (amdtpCb->txState != AMDTP_STATE_TX_IDLE)
+                                 ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:379:14: style: The scope of the variable 'transferSize' can be reduced. [variableScope]
+    uint16_t transferSize = 0;
+             ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:380:14: style: The scope of the variable 'remainingBytes' can be reduced. [variableScope]
+    uint16_t remainingBytes = 0;
+             ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:69:25: style: Variable 'calDataCrc' is assigned a value that is never used. [unreadVariable]
+    uint32_t calDataCrc = 0;
+                        ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:379:27: style: Variable 'transferSize' is assigned a value that is never used. [unreadVariable]
+    uint16_t transferSize = 0;
+                          ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:380:29: style: Variable 'remainingBytes' is assigned a value that is never used. [unreadVariable]
+    uint16_t remainingBytes = 0;
+                            ^
+software/external/ambiq_ble/profile_appl/amdtpcommon/amdtp_common.c:382:23: style: Variable 'retval' is assigned a value that is never used. [unreadVariable]
+    API_RESULT retval = API_SUCCESS;
+                      ^
+software/external/ambiq_ble/profile_appl/amdtps/appl_amdtps.c:404:23: style: Variable 'retval' is assigned a value that is never used. [unreadVariable]
+    API_RESULT retval = API_SUCCESS;
+                      ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:524:10: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+    else if ( amotasCb.fwHeader.storageType == AMOTA_FW_STORAGE_EXTERNAL )
+         ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:548:5: note: Found duplicate branches for 'if' and 'else'.
+    else
+    ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:524:10: note: Found duplicate branches for 'if' and 'else'.
+    else if ( amotasCb.fwHeader.storageType == AMOTA_FW_STORAGE_EXTERNAL )
+         ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:193:17: style: struct member 'amotaHeaderInfo_t::resvd1' is never used. [unusedStructMember]
+    uint32_t    resvd1;
+                ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:194:17: style: struct member 'amotaHeaderInfo_t::resvd2' is never used. [unusedStructMember]
+    uint32_t    resvd2;
+                ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:195:17: style: struct member 'amotaHeaderInfo_t::resvd3' is never used. [unusedStructMember]
+    uint32_t    resvd3;
+                ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:199:17: style: struct member 'amotaHeaderInfo_t::resvd4' is never used. [unusedStructMember]
+    uint32_t    resvd4;
+                ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:618:32: style: Variable 'ui32TargetAddress' is assigned a value that is never used. [unreadVariable]
+    uint32_t ui32TargetAddress = 0;
+                               ^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:1026:25: style: Variable 'calDataCrc' is assigned a value that is never used. [unreadVariable]
+    uint32_t calDataCrc = 0;
+                        ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1794:27: style: Redundant condition: 0!=diff_in_size. 'A || (!A && B)' is equivalent to 'A || B' [redundantCondition]
+    if (0 == diff_in_size || ((0 != diff_in_size)
+                          ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1044:32: style: The scope of the variable 'rsp_param' can be reduced. [variableScope]
+    ATT_READ_RSP_PARAM       * rsp_param;
+                               ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1565:9: error: Uninitialized variable: handle [uninitvar]
+    if (handle < range.end_handle)
+        ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1061:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1198:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:284:29: warning: Either the condition '10!=appl_att_write_queue_index' is redundant or the array 'appl_att_write_queue[10]' is accessed at index 10, which is out of bounds. [arrayIndexOutOfBoundsCond]
+        appl_att_write_queue[appl_att_write_queue_index].handle_value.value.len,
+                            ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:288:35: note: Assuming that condition '10!=appl_att_write_queue_index' is not redundant
+       (APPL_ATT_WRITE_QUEUE_SIZE != appl_att_write_queue_index))
+                                  ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:284:29: note: Array index out of bounds
+        appl_att_write_queue[appl_att_write_queue_index].handle_value.value.len,
+                            ^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:353:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:1794:27: style: Redundant condition: 0!=diff_in_size. 'A || (!A && B)' is equivalent to 'A || B' [redundantCondition]
+    if (0 == diff_in_size || ((0 != diff_in_size)
+                          ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:1043:32: style: The scope of the variable 'rsp_param' can be reduced. [variableScope]
+    ATT_READ_RSP_PARAM       * rsp_param;
+                               ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:1565:9: error: Uninitialized variable: handle [uninitvar]
+    if (handle < range.end_handle)
+        ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:1060:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:1197:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:283:29: warning: Either the condition '10!=appl_att_write_queue_index' is redundant or the array 'appl_att_write_queue[10]' is accessed at index 10, which is out of bounds. [arrayIndexOutOfBoundsCond]
+        appl_att_write_queue[appl_att_write_queue_index].handle_value.value.len,
+                            ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:287:35: note: Assuming that condition '10!=appl_att_write_queue_index' is not redundant
+       (APPL_ATT_WRITE_QUEUE_SIZE != appl_att_write_queue_index))
+                                  ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:283:29: note: Array index out of bounds
+        appl_att_write_queue[appl_att_write_queue_index].handle_value.value.len,
+                            ^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs_att_server.c:352:26: style: Variable 'err_param.error_code' is assigned a value that is never used. [unreadVariable]
+    err_param.error_code = ATT_ATTRIBUTE_NOT_FOUND;
+                         ^
+software/external/ambiq_ble/profile_appl/txpower_ctrl/appl_txpower_ctrl.c:949:36: warning: Redundant assignment of 'clock_accuracy' to itself. [selfAssignment]
+                    clock_accuracy = clock_accuracy;
+                                   ^
+software/external/ambiq_ble/profile_appl/txpower_ctrl/appl_txpower_ctrl.c:1028:38: warning: Redundant assignment of 'address_type' to itself. [selfAssignment]
+                        address_type = address_type;
+                                     ^
+software/external/ambiq_ble/profile_appl/txpower_ctrl/appl_txpower_ctrl.c:1029:30: warning: Redundant assignment of 'rssi' to itself. [selfAssignment]
+                        rssi = rssi;
+                             ^
+software/external/ambiq_ble/profile_appl/txpower_ctrl/appl_txpower_ctrl.c:1030:30: warning: Redundant assignment of 'role' to itself. [selfAssignment]
+                        role = role;
+                             ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:197:34: style: The statement 'if (amdtpCb->txState!=AMDTP_STATE_TX_IDLE) amdtpCb->txState=AMDTP_STATE_TX_IDLE' is logically equivalent to 'amdtpCb->txState=AMDTP_STATE_TX_IDLE'. [duplicateConditionalAssign]
+            if (amdtpCb->txState != AMDTP_STATE_TX_IDLE)
+                                 ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:200:34: note: Assignment 'amdtpCb->txState=AMDTP_STATE_TX_IDLE'
+                amdtpCb->txState = AMDTP_STATE_TX_IDLE;
+                                 ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:197:34: note: Condition 'amdtpCb->txState!=AMDTP_STATE_TX_IDLE' is redundant
+            if (amdtpCb->txState != AMDTP_STATE_TX_IDLE)
+                                 ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:372:14: style: The scope of the variable 'transferSize' can be reduced. [variableScope]
+    uint16_t transferSize = 0;
+             ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:373:14: style: The scope of the variable 'remainingBytes' can be reduced. [variableScope]
+    uint16_t remainingBytes = 0;
+             ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:75:25: style: Variable 'calDataCrc' is assigned a value that is never used. [unreadVariable]
+    uint32_t calDataCrc = 0;
+                        ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:372:27: style: Variable 'transferSize' is assigned a value that is never used. [unreadVariable]
+    uint16_t transferSize = 0;
+                          ^
+software/external/ambiq_ble/profiles/amdtpcommon/amdtp_common.c:373:29: style: Variable 'remainingBytes' is assigned a value that is never used. [unreadVariable]
+    uint16_t remainingBytes = 0;
+                            ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:188:48: warning: Either the condition 'pConn' is redundant or there is possible null pointer dereference: pConn. [nullPointerRedundantCheck]
+        APP_TRACE_WARN1("Invalid Conn = %d\n", pConn->connId);
+                                               ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:176:9: note: Assuming that condition 'pConn' is not redundant
+    if (pConn)
+        ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:188:48: note: Null pointer dereference
+        APP_TRACE_WARN1("Invalid Conn = %d\n", pConn->connId);
+                                               ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:211:48: warning: Either the condition 'pConn' is redundant or there is possible null pointer dereference: pConn. [nullPointerRedundantCheck]
+        APP_TRACE_WARN1("Invalid Conn = %d\n", pConn->connId);
+                                               ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:200:9: note: Assuming that condition 'pConn' is not redundant
+    if (pConn)
+        ^
+software/external/ambiq_ble/profiles/amdtps/amdtps_main.c:211:48: note: Null pointer dereference
+        APP_TRACE_WARN1("Invalid Conn = %d\n", pConn->connId);
+                                               ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:457:10: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+    else if ( amotasCb.fwHeader.storageType == AMOTA_FW_STORAGE_EXTERNAL )
+         ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:481:5: note: Found duplicate branches for 'if' and 'else'.
+    else
+    ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:457:10: note: Found duplicate branches for 'if' and 'else'.
+    else if ( amotasCb.fwHeader.storageType == AMOTA_FW_STORAGE_EXTERNAL )
+         ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:180:17: style: struct member 'amotaHeaderInfo_t::resvd1' is never used. [unusedStructMember]
+    uint32_t    resvd1;
+                ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:181:17: style: struct member 'amotaHeaderInfo_t::resvd2' is never used. [unusedStructMember]
+    uint32_t    resvd2;
+                ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:182:17: style: struct member 'amotaHeaderInfo_t::resvd3' is never used. [unusedStructMember]
+    uint32_t    resvd3;
+                ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:186:17: style: struct member 'amotaHeaderInfo_t::resvd4' is never used. [unusedStructMember]
+    uint32_t    resvd4;
+                ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:550:32: style: Variable 'ui32TargetAddress' is assigned a value that is never used. [unreadVariable]
+    uint32_t ui32TargetAddress = 0;
+                               ^
+software/external/ambiq_ble/profiles/amota/amotas_main.c:968:25: style: Variable 'calDataCrc' is assigned a value that is never used. [unreadVariable]
+    uint32_t calDataCrc = 0;
+                        ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:408:12: warning: Either the condition 'count>(64-2)' is redundant or the array 'buf[64]' is accessed at index 64, which is out of bounds. [arrayIndexOutOfBoundsCond]
+        buf[count + 1] = 0; // app attribute id
+           ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:399:20: note: Assuming that condition 'count>(64-2)' is not redundant
+        if ( count > (64 - 2) )
+                   ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:408:12: note: Array index out of bounds
+        buf[count + 1] = 0; // app attribute id
+           ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:349:14: style: The scope of the variable 'max_len' can be reduced. [variableScope]
+    uint16_t max_len = 256;
+             ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:393:13: style: The scope of the variable 'count' can be reduced. [variableScope]
+    uint8_t count = 0;
+            ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:389:55: style:inconclusive: Function 'AncsGetAppAttribute' argument 2 names different: declaration 'appId' definition 'pAppId'. [funcArgNamesDifferent]
+void AncsGetAppAttribute(uint16_t *pHdlList, uint8_t *pAppId)
+                                                      ^
+software/external/ambiq_ble/profiles/ancc/ancc_api.h:209:55: note: Function 'AncsGetAppAttribute' argument 2 names different: declaration 'appId' definition 'pAppId'.
+void AncsGetAppAttribute(uint16_t *pHdlList, uint8_t* appId);
+                                                      ^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:389:55: note: Function 'AncsGetAppAttribute' argument 2 names different: declaration 'appId' definition 'pAppId'.
+void AncsGetAppAttribute(uint16_t *pHdlList, uint8_t *pAppId)
+                                                      ^
+software/external/ambiq_ble/profiles/vole/voles_main.c:314:28: style: Condition 'output_len>0' is always true [knownConditionTrueFalse]
+        else if (output_len>0 && output_len<output_size)
+                           ^
+software/external/ambiq_ble/profiles/vole/voles_main.c:297:57: note: Assuming that condition 'output_len<=0' is not redundant
+    if ( index >= voles_ble_buffer_size() || output_len <= 0 )
+                                                        ^
+software/external/ambiq_ble/profiles/vole/voles_main.c:314:28: note: Condition 'output_len>0' is always true
+        else if (output_len>0 && output_len<output_size)
+                           ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2017:21: style: Same expression on both sides of '-'. [duplicateExpression]
+            x[3]  = PCM(0 + (8-8) * nchannels);
+                    ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2029:21: style: Same expression on both sides of '-'. [duplicateExpression]
+            x[3]  = PCM(1 + (8-8) * nchannels);
+                    ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:253:38: style: The scope of the variable 'max_bitneed' can be reduced. [variableScope]
+        int bitneed[2][8], loudness, max_bitneed, bitcount, slicecount, bitslice;
+                                     ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:253:51: style: The scope of the variable 'bitcount' can be reduced. [variableScope]
+        int bitneed[2][8], loudness, max_bitneed, bitcount, slicecount, bitslice;
+                                                  ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:253:61: style: The scope of the variable 'slicecount' can be reduced. [variableScope]
+        int bitneed[2][8], loudness, max_bitneed, bitcount, slicecount, bitslice;
+                                                            ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:253:73: style: The scope of the variable 'bitslice' can be reduced. [variableScope]
+        int bitneed[2][8], loudness, max_bitneed, bitcount, slicecount, bitslice;
+                                                                        ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:375:28: style: The scope of the variable 'loudness' can be reduced. [variableScope]
+        int bitneed[2][8], loudness, max_bitneed, bitcount, slicecount, bitslice;
+                           ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:565:13: style: The scope of the variable 'temp' can be reduced. [variableScope]
+    int32_t temp;
+            ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:844:12: style: The scope of the variable 'k' can be reduced. [variableScope]
+    int i, k, idx;
+           ^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:889:15: style: The scope of the variable 'k' can be reduced. [variableScope]
+    int i, j, k, idx;
+              ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:197:33: style: The statement 'if (voleCb->txState!=VOLE_STATE_TX_IDLE) voleCb->txState=VOLE_STATE_TX_IDLE' is logically equivalent to 'voleCb->txState=VOLE_STATE_TX_IDLE'. [duplicateConditionalAssign]
+            if (voleCb->txState != VOLE_STATE_TX_IDLE)
+                                ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:200:33: note: Assignment 'voleCb->txState=VOLE_STATE_TX_IDLE'
+                voleCb->txState = VOLE_STATE_TX_IDLE;
+                                ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:197:33: note: Condition 'voleCb->txState!=VOLE_STATE_TX_IDLE' is redundant
+            if (voleCb->txState != VOLE_STATE_TX_IDLE)
+                                ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:372:14: style: The scope of the variable 'transferSize' can be reduced. [variableScope]
+    uint16_t transferSize = 0;
+             ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:373:14: style: The scope of the variable 'remainingBytes' can be reduced. [variableScope]
+    uint16_t remainingBytes = 0;
+             ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:75:25: style: Variable 'calDataCrc' is assigned a value that is never used. [unreadVariable]
+    uint32_t calDataCrc = 0;
+                        ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:372:27: style: Variable 'transferSize' is assigned a value that is never used. [unreadVariable]
+    uint16_t transferSize = 0;
+                          ^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:373:29: style: Variable 'remainingBytes' is assigned a value that is never used. [unreadVariable]
+    uint16_t remainingBytes = 0;
+                            ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:336:38: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: pADCState. [nullPointerRedundantCheck]
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:342:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:335:38: note: Assignment 'pADCState=(struct am_hal_adc_state_t*)pHandle', assigned value is 0
+    am_hal_adc_state_t  *pADCState = (am_hal_adc_state_t *)pHandle;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:336:38: note: Null pointer dereference
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:421:38: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: pADCState. [nullPointerRedundantCheck]
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:427:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:420:38: note: Assignment 'pADCState=(struct am_hal_adc_state_t*)pHandle', assigned value is 0
+    am_hal_adc_state_t  *pADCState = (am_hal_adc_state_t *)pHandle;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:421:38: note: Null pointer dereference
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:506:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:512:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:506:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:599:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:605:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:599:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:760:38: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: pADCState. [nullPointerRedundantCheck]
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:766:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:759:38: note: Assignment 'pADCState=(struct am_hal_adc_state_t*)pHandle', assigned value is 0
+    am_hal_adc_state_t  *pADCState = (am_hal_adc_state_t *)pHandle;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:760:38: note: Null pointer dereference
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:808:38: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: pADCState. [nullPointerRedundantCheck]
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:814:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:807:38: note: Assignment 'pADCState=(struct am_hal_adc_state_t*)pHandle', assigned value is 0
+    am_hal_adc_state_t  *pADCState = (am_hal_adc_state_t *)pHandle;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:808:38: note: Null pointer dereference
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:850:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:856:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:850:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t *)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:902:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:908:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:902:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:940:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:946:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:940:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:979:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:985:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:979:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1026:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1032:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1026:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1065:28: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                           ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1071:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1065:28: note: Null pointer dereference
+    uint32_t ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                           ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1144:31: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: (struct am_hal_adc_state_t*)pHandle. [nullPointerRedundantCheck]
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1150:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1144:31: note: Null pointer dereference
+    uint32_t    ui32Module = ((am_hal_adc_state_t*)pHandle)->ui32Module;
+                              ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1187:38: warning: Either the condition 'pHandle' is redundant or there is possible null pointer dereference: pADCState. [nullPointerRedundantCheck]
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1193:11: note: Assuming that condition 'pHandle' is not redundant
+    if ( !AM_HAL_ADC_CHK_HANDLE(pHandle) )
+          ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1186:38: note: Assignment 'pADCState=(struct am_hal_adc_state_t*)pHandle', assigned value is 0
+    am_hal_adc_state_t  *pADCState = (am_hal_adc_state_t *)pHandle;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:1187:38: note: Null pointer dereference
+    uint32_t            ui32Module = pADCState->ui32Module;
+                                     ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:650:23: style: The scope of the variable 'fTemp' can be reduced. [variableScope]
+                float fTemp, fCalibration_temp, fCalibration_voltage, fCalibration_offset, fVoltage;
+                      ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:650:30: style: The scope of the variable 'fCalibration_temp' can be reduced. [variableScope]
+                float fTemp, fCalibration_temp, fCalibration_voltage, fCalibration_offset, fVoltage;
+                             ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:650:49: style: The scope of the variable 'fCalibration_voltage' can be reduced. [variableScope]
+                float fTemp, fCalibration_temp, fCalibration_voltage, fCalibration_offset, fVoltage;
+                                                ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:650:71: style: The scope of the variable 'fCalibration_offset' can be reduced. [variableScope]
+                float fTemp, fCalibration_temp, fCalibration_voltage, fCalibration_offset, fVoltage;
+                                                                      ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:650:92: style: The scope of the variable 'fVoltage' can be reduced. [variableScope]
+                float fTemp, fCalibration_temp, fCalibration_voltage, fCalibration_offset, fVoltage;
+                                                                                           ^
+software/external/mcu/apollo3/hal/am_hal_adc.c:169:21: style: struct member 'Anonymous2::fMeasuredFlag' is never used. [unusedStructMember]
+              float fMeasuredFlag;
+                    ^
+software/external/mcu/apollo3/hal/am_hal_ble.c:2659:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_burst.c:227:28: style: Variable 'am_hal_flash_store_ui32' is assigned a value that is never used. [unreadVariable]
+    am_hal_flash_store_ui32((uint32_t*)&CLKGEN->FREQCTRL, CLKGEN_FREQCTRL_BURSTREQ_DIS);
+                           ^
+software/external/mcu/apollo3/hal/am_hal_cachectrl.c:139:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_cmdq.c:193:13: style: Unused variable: hwCurIdx [unusedVariable]
+    int32_t hwCurIdx;
+            ^
+software/external/mcu/apollo3/hal/am_hal_ctimer.c:2282:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_flash.c:211:13: style: The scope of the variable 'iRetVal' can be reduced. [variableScope]
+        int iRetVal;
+            ^
+software/external/mcu/apollo3/hal/am_hal_flash.c:337:13: style: The scope of the variable 'iRetVal' can be reduced. [variableScope]
+        int iRetVal;
+            ^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1845:14: style: Local variable 'SRAM_write_ui32' shadows outer variable [shadowVariable]
+    uint32_t SRAM_write_ui32[12 / 4] =
+             ^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1821:10: note: Shadowed declaration
+uint32_t SRAM_write_ui32[12 / 4] =
+         ^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1845:14: note: Shadow variable
+    uint32_t SRAM_write_ui32[12 / 4] =
+             ^
+software/external/mcu/apollo3/hal/am_hal_gpio.c:652:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_iom.c:1563:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_ios.c:1053:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_mcuctrl.c:350:79: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+                ui32Tbl |= ui32SRAMreg & MCUCTRL_SRAMMODE_IPREFETCH_Msk       ? (1 << 3) : 0;
+                                                                              ^
+software/external/mcu/apollo3/hal/am_hal_mcuctrl.c:351:79: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+                ui32Tbl |= ui32SRAMreg & MCUCTRL_SRAMMODE_IPREFETCH_CACHE_Msk ? (1 << 2) : 0;
+                                                                              ^
+software/external/mcu/apollo3/hal/am_hal_mcuctrl.c:399:79: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+                ui32Tbl |= ui32SRAMreg & MCUCTRL_SRAMMODE_DPREFETCH_Msk       ? (1 << 3) : 0;
+                                                                              ^
+software/external/mcu/apollo3/hal/am_hal_mcuctrl.c:400:79: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+                ui32Tbl |= ui32SRAMreg & MCUCTRL_SRAMMODE_DPREFETCH_CACHE_Msk ? (1 << 2) : 0;
+                                                                              ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1904:25: style: Local variable 'ui32Status' shadows outer variable [shadowVariable]
+              uint32_t  ui32Status;
+                        ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1781:35: note: Shadowed declaration
+    uint32_t                      ui32Status = AM_HAL_STATUS_SUCCESS;
+                                  ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1904:25: note: Shadow variable
+              uint32_t  ui32Status;
+                        ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2003:22: style: Local variable 'ui32Status' shadows outer variable [shadowVariable]
+            uint32_t ui32Status = AM_HAL_STATUS_SUCCESS;
+                     ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1781:35: note: Shadowed declaration
+    uint32_t                      ui32Status = AM_HAL_STATUS_SUCCESS;
+                                  ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2003:22: note: Shadow variable
+            uint32_t ui32Status = AM_HAL_STATUS_SUCCESS;
+                     ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2695:9: style: Local variable 'ui32NumPend' shadows outer variable [shadowVariable]
+        ui32NumPend = pMSPIState->ui32NumCQEntries++;
+        ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2558:14: note: Shadowed declaration
+    uint32_t ui32NumPend;
+             ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2695:9: note: Shadow variable
+        ui32NumPend = pMSPIState->ui32NumCQEntries++;
+        ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1382:36: style: Unused variable: ui32Status [unusedVariable]
+    uint32_t                       ui32Status;
+                                   ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:1641:16: style: Variable 'ui32Config' is assigned a value that is never used. [unreadVariable]
+    ui32Config = 0;
+               ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2009:46: style: Variable 'ui32Critical' is assigned a value that is never used. [unreadVariable]
+            uint32_t            ui32Critical = 0;
+                                             ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2558:14: style: Unused variable: ui32NumPend [unusedVariable]
+    uint32_t ui32NumPend;
+             ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:3041:18: style: The scope of the variable 'index' can be reduced. [variableScope]
+        uint32_t index;
+                 ^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:936:14: style: Unused variable: ui32NumPend [unusedVariable]
+    uint32_t ui32NumPend;
+             ^
+software/external/mcu/apollo3/hal/am_hal_pwrctrl.c:386:56: style: Clarify calculation precedence for '&' and '?'. [clarifyCalculation]
+        ui32Enabled = PWRCTRL->DEVPWRSTATUS & ui32Mask ? 1 : 0;
+                                                       ^
+software/external/mcu/apollo3/hal/am_hal_queue.c:206:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_reset.c:103:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_scard.c:864:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_secure_ota.c:84:28: style: Variable 'am_hal_flash_page_erase' is assigned a value that is never used. [unreadVariable]
+    am_hal_flash_page_erase(ui32ProgamKey,
+                           ^
+software/external/mcu/apollo3/hal/am_hal_security.c:202:14: style: The scope of the variable 'flash0' can be reduced. [variableScope]
+    uint32_t flash0;
+             ^
+software/external/mcu/apollo3/hal/am_hal_security.c:203:14: style: The scope of the variable 'flash4' can be reduced. [variableScope]
+    uint32_t flash4;
+             ^
+software/external/mcu/apollo3/hal/am_hal_security.c:204:14: style: The scope of the variable 'i' can be reduced. [variableScope]
+    uint32_t i;
+             ^
+software/external/mcu/apollo3/hal/am_hal_security.c:408:14: style: The scope of the variable 'ui32XferSize' can be reduced. [variableScope]
+    uint32_t ui32XferSize, ui32cnt;
+             ^
+software/external/mcu/apollo3/hal/am_hal_security.c:408:28: style: The scope of the variable 'ui32cnt' can be reduced. [variableScope]
+    uint32_t ui32XferSize, ui32cnt;
+                           ^
+software/external/mcu/apollo3/hal/am_hal_security.c:409:15: style: The scope of the variable 'pui32Buf' can be reduced. [variableScope]
+    uint32_t *pui32Buf, *pui32Data;
+              ^
+software/external/mcu/apollo3/hal/am_hal_security.c:111:13: style: Unused variable: r3 [unusedVariable]
+    movw    r3, #0xED08
+            ^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:158:14: style: Unused variable: cfgVal [unusedVariable]
+    uint32_t cfgVal;
+             ^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:219:14: style: Unused variable: ui32fpccr [unusedVariable]
+    uint32_t ui32fpccr;
+             ^
+software/external/mcu/apollo3/hal/am_hal_systick.c:301:14: style: The scope of the variable 'ui32ClkFreq' can be reduced. [variableScope]
+    uint32_t ui32ClkFreq, ui32TicksPerMHz;
+             ^
+software/external/mcu/apollo3/hal/am_hal_systick.c:301:27: style: The scope of the variable 'ui32TicksPerMHz' can be reduced. [variableScope]
+    uint32_t ui32ClkFreq, ui32TicksPerMHz;
+                          ^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:257:14: style: The scope of the variable 'ui32HFRC' can be reduced. [variableScope]
+    uint32_t ui32HFRC, ui32SWOscaler, ui32ITMbitrate;
+             ^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:257:24: style: The scope of the variable 'ui32SWOscaler' can be reduced. [variableScope]
+    uint32_t ui32HFRC, ui32SWOscaler, ui32ITMbitrate;
+                       ^
+software/external/mcu/apollo3/hal/am_hal_uart.c:1157:5: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+    AM_CRITICAL_END
+    ^
+software/external/mcu/apollo3/hal/am_hal_wdt.c:249:9: error: There is an unknown macro here somewhere. Configuration is required. If AM_CRITICAL_END is a macro then please configure it. [unknownMacro]
+        AM_CRITICAL_END
+        ^
+software/external/utils/am_util_faultisr.c:434:13: style: Variable 'u32Mask' is assigned a value that is never used. [unreadVariable]
+    u32Mask = 0;
+            ^
+software/external/utils/am_util_faultisr.c:144:13: style: Unused variable: lr [unusedVariable]
+    tst     lr, #4      // Check if we should use MSP or PSP
+            ^
+software/external/utils/am_util_faultisr.c:156:13: style: Unused variable: r0 [unusedVariable]
+    lsls    r0, r0, #2
+            ^
+software/external/utils/am_util_id.c:80:0: information: Skipping configuration '_FLD2VAL' since the value of '_FLD2VAL' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    ui32ret = _FLD2VAL(MCUCTRL_CHIPREV_REVMAJ, ui32ChipRev);
+^
+software/external/utils/am_util_stdio.c:224:14: style: The scope of the variable 'q64' can be reduced. [variableScope]
+    uint64_t q64, r64;
+             ^
+software/external/utils/am_util_stdio.c:224:19: style: The scope of the variable 'r64' can be reduced. [variableScope]
+    uint64_t q64, r64;
+                  ^
+software/external/utils/am_util_stdio.c:225:14: style: The scope of the variable 'q32' can be reduced. [variableScope]
+    uint32_t q32, r32, ui32Val;
+             ^
+software/external/utils/am_util_stdio.c:225:19: style: The scope of the variable 'r32' can be reduced. [variableScope]
+    uint32_t q32, r32, ui32Val;
+                  ^
+software/external/utils/am_util_stdio.c:225:24: style: The scope of the variable 'ui32Val' can be reduced. [variableScope]
+    uint32_t q32, r32, ui32Val;
+                       ^
+software/external/utils/am_util_stdio.c:383:14: style: The scope of the variable 'uMod' can be reduced. [variableScope]
+    unsigned uMod;
+             ^
+software/external/utils/am_util_stdio.c:384:14: style: The scope of the variable 'u64Tmp' can be reduced. [variableScope]
+    uint64_t u64Tmp;
+             ^
+software/external/utils/am_util_stdio.c:444:10: style: The scope of the variable 'cCh' can be reduced. [variableScope]
+    char cCh, tbuf[20];
+         ^
+software/external/utils/am_util_stdio.c:603:26: style: The scope of the variable 'pcBuftmp' can be reduced. [variableScope]
+    char *pcBufInitial, *pcBuftmp;
+                         ^
+software/external/utils/am_util_stdio.c:786:23: style: The scope of the variable 'iPrecision' can be reduced. [variableScope]
+    int iWidth, iVal, iPrecision;
+                      ^
+software/external/utils/am_util_stdio.c:1186:29: style:inconclusive: Function 'am_util_stdio_sprintf' argument 1 names different: declaration 'pui8Buf' definition 'pcBuf'. [funcArgNamesDifferent]
+am_util_stdio_sprintf(char *pcBuf, const char *pcFmt, ...)
+                            ^
+software/external/utils/am_util_stdio.h:78:45: note: Function 'am_util_stdio_sprintf' argument 1 names different: declaration 'pui8Buf' definition 'pcBuf'.
+extern uint32_t am_util_stdio_sprintf(char *pui8Buf, const char *pui8Fmt, ...);
+                                            ^
+software/external/utils/am_util_stdio.c:1186:29: note: Function 'am_util_stdio_sprintf' argument 1 names different: declaration 'pui8Buf' definition 'pcBuf'.
+am_util_stdio_sprintf(char *pcBuf, const char *pcFmt, ...)
+                            ^
+software/external/utils/am_util_stdio.c:1186:48: style:inconclusive: Function 'am_util_stdio_sprintf' argument 2 names different: declaration 'pui8Fmt' definition 'pcFmt'. [funcArgNamesDifferent]
+am_util_stdio_sprintf(char *pcBuf, const char *pcFmt, ...)
+                                               ^
+software/external/utils/am_util_stdio.h:78:66: note: Function 'am_util_stdio_sprintf' argument 2 names different: declaration 'pui8Fmt' definition 'pcFmt'.
+extern uint32_t am_util_stdio_sprintf(char *pui8Buf, const char *pui8Fmt, ...);
+                                                                 ^
+software/external/utils/am_util_stdio.c:1186:48: note: Function 'am_util_stdio_sprintf' argument 2 names different: declaration 'pui8Fmt' definition 'pcFmt'.
+am_util_stdio_sprintf(char *pcBuf, const char *pcFmt, ...)
+                                               ^
+software/external/utils/am_util_stdio.c:1210:34: style:inconclusive: Function 'am_util_stdio_printf' argument 1 names different: declaration 'pui8Fmt' definition 'pcFmt'. [funcArgNamesDifferent]
+am_util_stdio_printf(const char *pcFmt, ...)
+                                 ^
+software/external/utils/am_util_stdio.h:79:50: note: Function 'am_util_stdio_printf' argument 1 names different: declaration 'pui8Fmt' definition 'pcFmt'.
+extern uint32_t am_util_stdio_printf(const char *pui8Fmt, ...);
+                                                 ^
+software/external/utils/am_util_stdio.c:1210:34: note: Function 'am_util_stdio_printf' argument 1 names different: declaration 'pui8Fmt' definition 'pcFmt'.
+am_util_stdio_printf(const char *pcFmt, ...)
+                                 ^
+software/external/utils/am_util_string.c:417:13: style: The scope of the variable 'cChar1' can be reduced. [variableScope]
+    uint8_t cChar1, cChar2;
+            ^
+software/external/utils/am_util_string.c:417:21: style: The scope of the variable 'cChar2' can be reduced. [variableScope]
+    uint8_t cChar1, cChar2;
+                    ^
+software/external/utils/am_util_string.c:465:13: style: The scope of the variable 'cChar1' can be reduced. [variableScope]
+    uint8_t cChar1, cChar2;
+            ^
+software/external/utils/am_util_string.c:465:21: style: The scope of the variable 'cChar2' can be reduced. [variableScope]
+    uint8_t cChar1, cChar2;
+                    ^
+software/libs/fram/mspi.c:258:15: style: Redundant initialization for 'sram_status'. The initialized value is overwritten before it is read. [redundantInitialization]
+  sram_status = am_devices_mspi_psram_status();
+              ^
+software/libs/fram/mspi.c:256:23: note: sram_status is initialized
+  uint8_t sram_status = am_devices_mspi_psram_status();
+                      ^
+software/libs/fram/mspi.c:258:15: note: sram_status is overwritten
+  sram_status = am_devices_mspi_psram_status();
+              ^
+software/libs/fram/mspi.c:691:47: style:inconclusive: Function 'am_devices_mspi_psram_write' argument 1 names different: declaration 'ui8TxBuffer' definition 'pui8TxBuffer'. [funcArgNamesDifferent]
+uint32_t am_devices_mspi_psram_write(uint8_t* pui8TxBuffer,
+                                              ^
+software/libs/fram/mspi.h:27:47: note: Function 'am_devices_mspi_psram_write' argument 1 names different: declaration 'ui8TxBuffer' definition 'pui8TxBuffer'.
+uint32_t am_devices_mspi_psram_write(uint8_t* ui8TxBuffer,
+                                              ^
+software/libs/fram/mspi.c:691:47: note: Function 'am_devices_mspi_psram_write' argument 1 names different: declaration 'ui8TxBuffer' definition 'pui8TxBuffer'.
+uint32_t am_devices_mspi_psram_write(uint8_t* pui8TxBuffer,
+                                              ^
+software/libs/fram/mspi.c:288:12: style: Unused variable: ui32Status [unusedVariable]
+  uint32_t ui32Status;
+           ^
+software/libs/memtracker/memtracker.c:112:15: style: Same expression on both sides of '|='. [duplicateExpression]
+    SCB->CFSR |= SCB->CFSR;
+              ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:192:31: style:inconclusive: Function 'bliss_free' argument 1 names different: declaration 'free' definition 'free_list'. [funcArgNamesDifferent]
+void bliss_free(bliss_list_t *free_list)
+                              ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.h:75:31: note: Function 'bliss_free' argument 1 names different: declaration 'free' definition 'free_list'.
+void bliss_free(bliss_list_t *free);
+                              ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:192:31: note: Function 'bliss_free' argument 1 names different: declaration 'free' definition 'free_list'.
+void bliss_free(bliss_list_t *free_list)
+                              ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:224:24: style:inconclusive: Function 'bliss_store' argument 1 names different: declaration 'bliss_list' definition 'bliss_lst'. [funcArgNamesDifferent]
+void bliss_store(void *bliss_lst, char *src, size_t n)
+                       ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.h:80:24: note: Function 'bliss_store' argument 1 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_store(void *bliss_list, char *src, size_t n);
+                       ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:224:24: note: Function 'bliss_store' argument 1 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_store(void *bliss_lst, char *src, size_t n)
+                       ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:273:45: style:inconclusive: Function 'bliss_extract_woffset' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'. [funcArgNamesDifferent]
+void bliss_extract_woffset(char *dst, void *bliss_lst, size_t offset, size_t n)
+                                            ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.h:90:45: note: Function 'bliss_extract_woffset' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_extract_woffset(char *dst, void *bliss_list, size_t offset, size_t n);
+                                            ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:273:45: note: Function 'bliss_extract_woffset' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_extract_woffset(char *dst, void *bliss_lst, size_t offset, size_t n)
+                                            ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:335:37: style:inconclusive: Function 'bliss_extract' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'. [funcArgNamesDifferent]
+void bliss_extract(char *dst, void *bliss_lst, size_t n)
+                                    ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.h:85:37: note: Function 'bliss_extract' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_extract(char *dst, void *bliss_list, size_t n);
+                                    ^
+software/libs/mpatch/bliss_allocator/bliss_allocator.c:335:37: note: Function 'bliss_extract' argument 2 names different: declaration 'bliss_list' definition 'bliss_lst'.
+void bliss_extract(char *dst, void *bliss_lst, size_t n)
+                                    ^
+software/libs/mpatch/bliss_allocator/bliss_allocator_debug_util.c:30:20: style: The scope of the variable 'block' can be reduced. [variableScope]
+    bliss_block_t *block;
+                   ^
+software/libs/mpatch/mpatch/mpatch.c:649:10: style: The scope of the variable 'deleted_patch' can be reduced. [variableScope]
+    bool deleted_patch = false;
+         ^
+software/libs/mpatch/mpatch/mpatch.c:649:24: style: Variable 'deleted_patch' is assigned a value that is never used. [unreadVariable]
+    bool deleted_patch = false;
+                       ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:591:43: style: The comparison 'n_free_blocks_before_free < n_free_blocks_after_free' is always false because 'n_free_blocks_before_free' and 'n_free_blocks_after_free' represent the same value. [knownConditionTrueFalse]
+    assert_true(n_free_blocks_before_free < n_free_blocks_after_free);
+                                          ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:578:73: note: 'n_free_blocks_before_free' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    bliss_block_idx_t n_free_blocks_before_free = bliss_active_allocator->n_free_blocks;
+                                                                        ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:587:72: note: 'n_free_blocks_after_free' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    bliss_block_idx_t n_free_blocks_after_free = bliss_active_allocator->n_free_blocks;
+                                                                       ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:591:43: note: The comparison 'n_free_blocks_before_free < n_free_blocks_after_free' is always false because 'n_free_blocks_before_free' and 'n_free_blocks_after_free' represent the same value.
+    assert_true(n_free_blocks_before_free < n_free_blocks_after_free);
+                                          ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:608:38: style: The comparison 'next_free_after_free == next_free_after_second_free' is always true because 'next_free_after_free' and 'next_free_after_second_free' represent the same value. [knownConditionTrueFalse]
+    assert_true(next_free_after_free == next_free_after_second_free);
+                                     ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:589:65: note: 'next_free_after_free' is assigned value 'bliss_active_allocator->next_free_block' here.
+    bliss_block_t *next_free_after_free = bliss_active_allocator->next_free_block;
+                                                                ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:604:72: note: 'next_free_after_second_free' is assigned value 'bliss_active_allocator->next_free_block' here.
+    bliss_block_t *next_free_after_second_free = bliss_active_allocator->next_free_block;
+                                                                       ^
+software/libs/mpatch/test/unit/bliss_allocator/test_bliss_allocator.c:608:38: note: The comparison 'next_free_after_free == next_free_after_second_free' is always true because 'next_free_after_free' and 'next_free_after_second_free' represent the same value.
+    assert_true(next_free_after_free == next_free_after_second_free);
+                                     ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1473:13: portability: %d in format string (no. 3) requires 'int' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_sint]
+            printf("Offending index: %d, addr: %p, region (%d): %p\n",
+            ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1226:41: style: The comparison 'free_blocks_after_stage < free_blocks_before_stage' is always false because 'free_blocks_after_stage' and 'free_blocks_before_stage' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_stage < free_blocks_before_stage);
+                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1225:57: note: 'free_blocks_after_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_stage = bliss_active_allocator->n_free_blocks;
+                                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1220:58: note: 'free_blocks_before_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_before_stage = bliss_active_allocator->n_free_blocks;
+                                                         ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1226:41: note: The comparison 'free_blocks_after_stage < free_blocks_before_stage' is always false because 'free_blocks_after_stage' and 'free_blocks_before_stage' represent the same value.
+    assert_true(free_blocks_after_stage < free_blocks_before_stage);
+                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1234:43: style: The comparison 'free_blocks_after_recover == free_blocks_before_stage' is always true because 'free_blocks_after_recover' and 'free_blocks_before_stage' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_recover == free_blocks_before_stage);
+                                          ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1233:59: note: 'free_blocks_after_recover' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_recover = bliss_active_allocator->n_free_blocks;
+                                                          ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1220:58: note: 'free_blocks_before_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_before_stage = bliss_active_allocator->n_free_blocks;
+                                                         ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1234:43: note: The comparison 'free_blocks_after_recover == free_blocks_before_stage' is always true because 'free_blocks_after_recover' and 'free_blocks_before_stage' represent the same value.
+    assert_true(free_blocks_after_recover == free_blocks_before_stage);
+                                          ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1290:39: style: The comparison 'free_blocks_after_del > free_blocks_before_del' is always false because 'free_blocks_after_del' and 'free_blocks_before_del' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_del > free_blocks_before_del);
+                                      ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1288:55: note: 'free_blocks_after_del' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_del = bliss_active_allocator->n_free_blocks;
+                                                      ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1280:56: note: 'free_blocks_before_del' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_before_del = bliss_active_allocator->n_free_blocks;
+                                                       ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1290:39: note: The comparison 'free_blocks_after_del > free_blocks_before_del' is always false because 'free_blocks_after_del' and 'free_blocks_before_del' represent the same value.
+    assert_true(free_blocks_after_del > free_blocks_before_del);
+                                      ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1324:41: style: The comparison 'free_blocks_after_stage < free_blocks_before_stage' is always false because 'free_blocks_after_stage' and 'free_blocks_before_stage' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_stage < free_blocks_before_stage);
+                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1322:57: note: 'free_blocks_after_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_stage = bliss_active_allocator->n_free_blocks;
+                                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1318:58: note: 'free_blocks_before_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_before_stage = bliss_active_allocator->n_free_blocks;
+                                                         ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1324:41: note: The comparison 'free_blocks_after_stage < free_blocks_before_stage' is always false because 'free_blocks_after_stage' and 'free_blocks_before_stage' represent the same value.
+    assert_true(free_blocks_after_stage < free_blocks_before_stage);
+                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1341:44: style: The comparison 'free_blocks_after_uncommit > free_blocks_after_stage' is always false because 'free_blocks_after_uncommit' and 'free_blocks_after_stage' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_uncommit > free_blocks_after_stage);
+                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1340:60: note: 'free_blocks_after_uncommit' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_uncommit = bliss_active_allocator->n_free_blocks;
+                                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1322:57: note: 'free_blocks_after_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_stage = bliss_active_allocator->n_free_blocks;
+                                                        ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1341:44: note: The comparison 'free_blocks_after_uncommit > free_blocks_after_stage' is always false because 'free_blocks_after_uncommit' and 'free_blocks_after_stage' represent the same value.
+    assert_true(free_blocks_after_uncommit > free_blocks_after_stage);
+                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1342:44: style: The comparison 'free_blocks_after_uncommit == free_blocks_before_stage' is always true because 'free_blocks_after_uncommit' and 'free_blocks_before_stage' represent the same value. [knownConditionTrueFalse]
+    assert_true(free_blocks_after_uncommit == free_blocks_before_stage);
+                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1340:60: note: 'free_blocks_after_uncommit' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_after_uncommit = bliss_active_allocator->n_free_blocks;
+                                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1318:58: note: 'free_blocks_before_stage' is assigned value 'bliss_active_allocator->n_free_blocks' here.
+    int free_blocks_before_stage = bliss_active_allocator->n_free_blocks;
+                                                         ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1342:44: note: The comparison 'free_blocks_after_uncommit == free_blocks_before_stage' is always true because 'free_blocks_after_uncommit' and 'free_blocks_before_stage' represent the same value.
+    assert_true(free_blocks_after_uncommit == free_blocks_before_stage);
+                                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1500:15: style: The scope of the variable 'mpatchregionstart' can be reduced. [variableScope]
+    uintptr_t mpatchregionstart;
+              ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1501:15: style: The scope of the variable 'mpatchregionend' can be reduced. [variableScope]
+    uintptr_t mpatchregionend;
+              ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1590:15: style: The scope of the variable 'mpatchregionstart' can be reduced. [variableScope]
+    uintptr_t mpatchregionstart;
+              ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1591:15: style: The scope of the variable 'mpatchregionend' can be reduced. [variableScope]
+    uintptr_t mpatchregionend;
+              ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1436:28: style: Variable 'n_patches' is assigned a value that is never used. [unreadVariable]
+    const size_t n_patches = memory_size/patch_size;
+                           ^
+software/libs/mpatch/test/unit/mpatch/test_mpatch.c:1467:28: style: Variable 'n_patches' is assigned a value that is never used. [unreadVariable]
+    const size_t n_patches = memory_size/patch_size;
+                           ^
+software/libs/mpatch/test/unit/test_cmocka.c:5:22: style: Same expression on both sides of '=='. [duplicateExpression]
+    assert_true(true == true);
+                     ^
+software/libs/mpatch/test/unit/util/asciitree.c:82:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i, isleft;
+        ^
+software/libs/mpatch/test/unit/util/asciitree.c:99:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i, notleft;
+        ^
+software/libs/mpatch/test/unit/util/asciitree.c:118:12: style: The scope of the variable 'hmin' can be reduced. [variableScope]
+    int h, hmin, i, delta;
+           ^
+software/libs/mpatch/test/unit/util/asciitree.c:118:18: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int h, hmin, i, delta;
+                 ^
+software/libs/mpatch/test/unit/util/asciitree.c:118:21: style: The scope of the variable 'delta' can be reduced. [variableScope]
+    int h, hmin, i, delta;
+                    ^
+software/external/ambiq_ble/apps/amdtps/amdtp_main.c:786:0: style: The function 'AmdtpHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amdtps/amdtp_main.c:746:0: style: The function 'AmdtpHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amdtps/amdtp_main.c:822:0: style: The function 'AmdtpStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amdtpc/amdtp_main.c:1036:0: style: The function 'AmdtpcHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amdtpc/amdtp_main.c:993:0: style: The function 'AmdtpcHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amdtpc/amdtp_main.c:1075:0: style: The function 'AmdtpcStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amota/amota_main.c:633:0: style: The function 'AmotaHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amota/amota_main.c:600:0: style: The function 'AmotaHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/amota/amota_main.c:669:0: style: The function 'AmotaStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:437:0: style: The function 'AmsWrite2EntityAttribute' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:424:0: style: The function 'AmsWrite2RemoteCommand' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/ancc/ancc_main.c:389:0: style: The function 'AncsGetAppAttribute' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ancs/ancs_main.c:817:0: style: The function 'AncsHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ancs/ancs_main.c:782:0: style: The function 'AncsHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ancs/ancs_main.c:1026:0: style: The function 'AncsStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:1115:0: style: The function 'BeaconScannerHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:1071:0: style: The function 'BeaconScannerHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/beaconscanner/beaconscanner_main.c:1154:0: style: The function 'BeaconScannerStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/menu/ble_menu.c:232:0: style: The function 'BleMenuRx' is never used. [unusedFunction]
+
+^
+software/libs/memtracker/memtracker.c:42:0: style: The function 'CompleteWriteASM' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_datc/prodtest_datc_main.c:1160:0: style: The function 'DatcHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_datc/prodtest_datc_main.c:1120:0: style: The function 'DatcHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_datc/prodtest_datc_main.c:1234:0: style: The function 'DatcStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_dats/prodtest_dats_main.c:723:0: style: The function 'DatsHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_dats/prodtest_dats_main.c:601:0: style: The function 'DatsHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/prodtest_dats/prodtest_dats_main.c:764:0: style: The function 'DatsStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/services/svc_amdtp.c:232:0: style: The function 'SvcAmdtpsRemoveGroup' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/services/svc_amotas.c:194:0: style: The function 'SvcAmotasRemoveGroup' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/services/svc_amvole.c:203:0: style: The function 'SvcVolesRemoveGroup' is never used. [unusedFunction]
+
+^
+software/external/CMSIS/AmbiqMicro/Source/system_apollo1.c:80:0: style: The function 'SystemCoreClockUpdate' is never used. [unusedFunction]
+
+^
+software/external/CMSIS/AmbiqMicro/Source/system_apollo1.c:100:0: style: The function 'SystemInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:332:0: style: The function 'VoleBleSend' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:270:0: style: The function 'VoleBuildPkt' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:804:0: style: The function 'VoleHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:770:0: style: The function 'VoleHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:169:0: style: The function 'VolePacketHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:72:0: style: The function 'VoleReceivePkt' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/vole_common.c:350:0: style: The function 'VoleSendControl' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:840:0: style: The function 'VoleStart' is never used. [unusedFunction]
+
+^
+software/libs/jit/jit_checkpoint.c:114:0: style: The function 'adc_deconfig' is never used. [unusedFunction]
+
+^
+software/config/startup_gcc.c:413:0: style: The function 'am_default_isr' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:908:0: style: The function 'am_devices_mspi_psram_disable_scrambling' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:885:0: style: The function 'am_devices_mspi_psram_enable_scrambling' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:759:0: style: The function 'am_devices_mspi_psram_nonblocking_read' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:740:0: style: The function 'am_devices_mspi_psram_nonblocking_write' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:587:0: style: The function 'am_devices_mspi_psram_read' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:651:0: style: The function 'am_devices_mspi_psram_read_hiprio' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:691:0: style: The function 'am_devices_mspi_psram_write' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:796:0: style: The function 'am_devices_mspi_psram_write_hiprio' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_faultisr.c:139:0: style: The function 'am_fault_isr' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_adc.c:502:0: style: The function 'am_hal_adc_configure_dma' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_adc.c:938:0: style: The function 'am_hal_adc_interrupt_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_adc.c:848:0: style: The function 'am_hal_adc_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_security.c:513:0: style: The function 'am_hal_bootloader_exit' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_burst.c:216:0: style: The function 'am_hal_burst_mode_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_clkgen.c:320:0: style: The function 'am_hal_clkgen_interrupt_clear' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_clkgen.c:291:0: style: The function 'am_hal_clkgen_interrupt_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_clkgen.c:262:0: style: The function 'am_hal_clkgen_interrupt_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_clkgen.c:381:0: style: The function 'am_hal_clkgen_interrupt_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_clkgen.c:349:0: style: The function 'am_hal_clkgen_interrupt_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_cmdq.c:637:0: style: The function 'am_hal_cmdq_pause' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_security.c:350:0: style: The function 'am_hal_crc32' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_debug.c:82:0: style: The function 'am_hal_debug_error' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:276:0: style: The function 'am_hal_flash_clear_bits' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1572:0: style: The function 'am_hal_flash_copy_protect_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1469:0: style: The function 'am_hal_flash_copy_protect_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1313:0: style: The function 'am_hal_flash_debugger_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1355:0: style: The function 'am_hal_flash_debugger_disable_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:402:0: style: The function 'am_hal_flash_erase_info' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:434:0: style: The function 'am_hal_flash_erase_main_plus_info' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:473:0: style: The function 'am_hal_flash_erase_main_plus_info_both_instances' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:851:0: style: The function 'am_hal_flash_info_erase_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:893:0: style: The function 'am_hal_flash_info_erase_disable_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:948:0: style: The function 'am_hal_flash_info_program_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1004:0: style: The function 'am_hal_flash_info_program_disable_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:823:0: style: The function 'am_hal_flash_info_signature_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:122:0: style: The function 'am_hal_flash_mass_erase' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:324:0: style: The function 'am_hal_flash_program_info' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:516:0: style: The function 'am_hal_flash_recovery' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1226:0: style: The function 'am_hal_flash_swo_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1268:0: style: The function 'am_hal_flash_swo_disable_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1052:0: style: The function 'am_hal_flash_wipe_flash_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1094:0: style: The function 'am_hal_flash_wipe_flash_enable_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1139:0: style: The function 'am_hal_flash_wipe_sram_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1181:0: style: The function 'am_hal_flash_wipe_sram_enable_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1744:0: style: The function 'am_hal_flash_write_protect_check' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_flash.c:1641:0: style: The function 'am_hal_flash_write_protect_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_secure_ota.c:202:0: style: The function 'am_hal_get_ota_status' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:122:0: style: The function 'am_hal_itm_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:378:0: style: The function 'am_hal_itm_print_not_busy' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:307:0: style: The function 'am_hal_itm_stimulus_reg_short_write' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:361:0: style: The function 'am_hal_itm_sync_send' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:238:0: style: The function 'am_hal_itm_trace_port_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_itm.c:214:0: style: The function 'am_hal_itm_trace_port_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_mcuctrl.c:468:0: style: The function 'am_hal_mcuctrl_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2352:0: style: The function 'am_hal_mspi_capabilities_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_mspi.c:2726:0: style: The function 'am_hal_mspi_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:327:0: style: The function 'am_hal_pdm_configure' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:213:0: style: The function 'am_hal_pdm_deinitialize' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:396:0: style: The function 'am_hal_pdm_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:456:0: style: The function 'am_hal_pdm_dma_start' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:378:0: style: The function 'am_hal_pdm_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:505:0: style: The function 'am_hal_pdm_fifo_flush' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:539:0: style: The function 'am_hal_pdm_i2s_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:522:0: style: The function 'am_hal_pdm_i2s_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:162:0: style: The function 'am_hal_pdm_initialize' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:598:0: style: The function 'am_hal_pdm_interrupt_clear' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:577:0: style: The function 'am_hal_pdm_interrupt_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:556:0: style: The function 'am_hal_pdm_interrupt_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:619:0: style: The function 'am_hal_pdm_interrupt_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pdm.c:241:0: style: The function 'am_hal_pdm_power_control' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pwrctrl.c:469:0: style: The function 'am_hal_pwrctrl_memory_deepsleep_powerdown' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pwrctrl.c:491:0: style: The function 'am_hal_pwrctrl_memory_deepsleep_retain' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pwrctrl.c:403:0: style: The function 'am_hal_pwrctrl_memory_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_pwrctrl.c:337:0: style: The function 'am_hal_pwrctrl_periph_enabled' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:601:0: style: The function 'am_hal_rtc_alarm_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:469:0: style: The function 'am_hal_rtc_alarm_interval_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:550:0: style: The function 'am_hal_rtc_alarm_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:274:0: style: The function 'am_hal_rtc_int_clear' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:225:0: style: The function 'am_hal_rtc_int_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:181:0: style: The function 'am_hal_rtc_int_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:201:0: style: The function 'am_hal_rtc_int_enable_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:250:0: style: The function 'am_hal_rtc_int_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:298:0: style: The function 'am_hal_rtc_int_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:118:0: style: The function 'am_hal_rtc_osc_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:99:0: style: The function 'am_hal_rtc_osc_select' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:157:0: style: The function 'am_hal_rtc_time_12hour' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:373:0: style: The function 'am_hal_rtc_time_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_rtc.c:328:0: style: The function 'am_hal_rtc_time_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_security.c:200:0: style: The function 'am_hal_security_get_info' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:393:0: style: The function 'am_hal_stimer_capture_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:266:0: style: The function 'am_hal_stimer_capture_start' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:323:0: style: The function 'am_hal_stimer_capture_stop' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:156:0: style: The function 'am_hal_stimer_compare_delta_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:241:0: style: The function 'am_hal_stimer_compare_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:70:0: style: The function 'am_hal_stimer_config' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:127:0: style: The function 'am_hal_stimer_counter_clear' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:112:0: style: The function 'am_hal_stimer_counter_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:595:0: style: The function 'am_hal_stimer_int_clear' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:515:0: style: The function 'am_hal_stimer_int_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:438:0: style: The function 'am_hal_stimer_int_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:475:0: style: The function 'am_hal_stimer_int_enable_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:555:0: style: The function 'am_hal_stimer_int_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:621:0: style: The function 'am_hal_stimer_int_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:371:0: style: The function 'am_hal_stimer_nvram_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_stimer.c:348:0: style: The function 'am_hal_stimer_nvram_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:265:0: style: The function 'am_hal_sysctrl_aircr_reset' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:173:0: style: The function 'am_hal_sysctrl_fpu_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:153:0: style: The function 'am_hal_sysctrl_fpu_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:245:0: style: The function 'am_hal_sysctrl_fpu_stacking_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:217:0: style: The function 'am_hal_sysctrl_fpu_stacking_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_sysctrl.c:85:0: style: The function 'am_hal_sysctrl_sleep' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:221:0: style: The function 'am_hal_systick_count' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:298:0: style: The function 'am_hal_systick_delay_us' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:139:0: style: The function 'am_hal_systick_int_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:121:0: style: The function 'am_hal_systick_int_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:157:0: style: The function 'am_hal_systick_int_status_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:197:0: style: The function 'am_hal_systick_load' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:176:0: style: The function 'am_hal_systick_reset' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:80:0: style: The function 'am_hal_systick_start' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_systick.c:103:0: style: The function 'am_hal_systick_stop' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:86:0: style: The function 'am_hal_tpiu_clock_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:68:0: style: The function 'am_hal_tpiu_clock_enable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:206:0: style: The function 'am_hal_tpiu_configure' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:378:0: style: The function 'am_hal_tpiu_disable' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:166:0: style: The function 'am_hal_tpiu_port_width_get' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:107:0: style: The function 'am_hal_tpiu_port_width_set' is never used. [unusedFunction]
+
+^
+software/external/mcu/apollo3/hal/am_hal_tpiu.c:123:0: style: The function 'am_hal_tpiu_supported_port_width_get' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:113:0: style: The function 'am_mspi1_isr' is never used. [unusedFunction]
+
+^
+software/libs/fram/mspi.c:130:0: style: The function 'am_mspi2_isr' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:200:0: style: The function 'am_util_ble_BQB_test_init' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:230:0: style: The function 'am_util_ble_crystal_trim_set' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:255:0: style: The function 'am_util_ble_hci_reset' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:125:0: style: The function 'am_util_ble_init_rf_channel' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:617:0: style: The function 'am_util_ble_read_modex_value' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:385:0: style: The function 'am_util_ble_receiver_test_ex' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:544:0: style: The function 'am_util_ble_set_constant_transmission_ex' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:533:0: style: The function 'am_util_ble_transmitter_control_ex' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_ble.c:318:0: style: The function 'am_util_ble_trasmitter_test_ex' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_delay.c:70:0: style: The function 'am_util_delay_cycles' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_faultisr.c:259:0: style: The function 'am_util_faultisr_collect_data' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_id.c:129:0: style: The function 'am_util_id_device' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_stdio.c:1186:0: style: The function 'am_util_stdio_sprintf' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_stdio.c:106:0: style: The function 'am_util_stdio_strtoul' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_stdio.c:554:0: style: The function 'am_util_stdio_textmode_set' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:231:0: style: The function 'am_util_string_isalnum' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:241:0: style: The function 'am_util_string_isalpha' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:251:0: style: The function 'am_util_string_isdigit' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:322:0: style: The function 'am_util_string_isfilenm83' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:260:0: style: The function 'am_util_string_islower' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:270:0: style: The function 'am_util_string_isspace' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:280:0: style: The function 'am_util_string_isupper' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:290:0: style: The function 'am_util_string_isxdigit' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:597:0: style: The function 'am_util_string_strcat' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:351:0: style: The function 'am_util_string_strcmp' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:463:0: style: The function 'am_util_string_stricmp' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:496:0: style: The function 'am_util_string_strlen' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:559:0: style: The function 'am_util_string_strncpy' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:415:0: style: The function 'am_util_string_strnicmp' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:299:0: style: The function 'am_util_string_tolower' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_string.c:308:0: style: The function 'am_util_string_toupper' is never used. [unusedFunction]
+
+^
+software/external/utils/am_util_time.c:92:0: style: The function 'am_util_time_computeDayofWeek' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amdtps/appl_amdtps.c:392:0: style: The function 'amdtps_mtu_update' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:412:0: style: The function 'amota_mtu_update' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:307:0: style: The function 'ams_mtu_update' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:220:0: style: The function 'amvoleKwdSetDemoName' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/vole/vole_main.c:753:0: style: The function 'amvoleStartSendVoiceData' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ancs/ancs_main.c:990:0: style: The function 'ancsRejectCall' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs.c:326:0: style: The function 'ancs_mtu_update' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:1146:0: style: The function 'appl_access_state_handler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amdtps/appl_amdtps.c:173:0: style: The function 'appl_amdtps_connect' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amdtps/appl_amdtps.c:168:0: style: The function 'appl_amdtps_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amdtps/appl_amdtps.c:446:0: style: The function 'appl_amdtps_write_cback' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:341:0: style: The function 'appl_amotas_connect' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:1001:0: style: The function 'appl_amotas_disconnect' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:328:0: style: The function 'appl_amotas_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/amota/appl_amota.c:1018:0: style: The function 'appl_amotas_write_cback' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:245:0: style: The function 'appl_ams_connect' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:239:0: style: The function 'appl_ams_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:301:0: style: The function 'appl_ams_server_reinitialize' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs.c:263:0: style: The function 'appl_ancs_connect' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs.c:257:0: style: The function 'appl_ancs_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs.c:319:0: style: The function 'appl_ancs_server_reinitialize' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1944:0: style: The function 'appl_att_cb' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:243:0: style: The function 'appl_att_server_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:1187:0: style: The function 'appl_bluetooth_off' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:1161:0: style: The function 'appl_bluetooth_on' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:2764:0: style: The function 'appl_gatt_signing_verification_complete' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ibeacon/appl_ibeacon.c:21:0: style: The function 'appl_ibeacon_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:478:0: style: The function 'appl_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:470:0: style: The function 'appl_profile_operations' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1635:0: style: The function 'appl_read_req' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:290:0: style: The function 'appl_send_ams_measurement' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ancs/appl_ancs.c:308:0: style: The function 'appl_send_ancs_measurement' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:1229:0: style: The function 'appl_set_scan_mode' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/fcc_test/appl_fcc_test.c:1192:0: style: The function 'appl_set_scan_parameters' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams.c:296:0: style: The function 'appl_timer_expiry_handler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profile_appl/ams/appl_ams_att_server.c:1917:0: style: The function 'appl_write_cmd' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/bliss_allocator/bliss_allocator_debug_util.c:50:0: style: The function 'bliss_dbg_print_active_allocator' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/bliss_allocator/bliss_allocator_debug_util.c:45:0: style: The function 'bliss_dbg_print_all_blocks' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/bliss_allocator/bliss_allocator_debug_util.c:39:0: style: The function 'bliss_dbg_print_initialized_blocks' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/bss/checkpoint_bss.c:38:0: style: The function 'checkpoint_bss' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/data/checkpoint_data.c:38:0: style: The function 'checkpoint_data' is never used. [unusedFunction]
+
+^
+software/libs/memtracker/checkpoint_memtracker.c:49:0: style: The function 'checkpoint_memtracker' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/mpatch/checkpoint_mpatch.c:6:0: style: The function 'checkpoint_mpatch' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/stack/checkpoint_stack.c:45:0: style: The function 'checkpoint_stack' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:312:0: style: The function 'displayShutdown' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:122:0: style: The function 'displayWriteBar' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:88:0: style: The function 'displayWriteLine' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:143:0: style: The function 'displayWriteLineBW' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:70:0: style: The function 'displayWriteLineCpy' is never used. [unusedFunction]
+
+^
+software/libs/display/display.c:104:0: style: The function 'displayWriteScreen' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ibeacon/ibeacon_main.c:294:0: style: The function 'iBeaconHandler' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ibeacon/ibeacon_main.c:266:0: style: The function 'iBeaconHandlerInit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/apps/ibeacon/ibeacon_main.c:323:0: style: The function 'iBeaconStart' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/em9304/em9304_init.c:782:0: style: The function 'initEM9304' is never used. [unusedFunction]
+
+^
+software/apps/memtracker/main_memtracker.c:20:0: style: The function 'memTrackerTest' is never used. [unusedFunction]
+
+^
+software/libs/memtracker/memtracker.c:105:0: style: The function 'memTrackingHandler' is never used. [unusedFunction]
+
+^
+software/libs/memtracker/checkpoint_memtracker.c:71:0: style: The function 'post_checkpoint_memtracker' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/test/unit/util/asciitree.c:238:0: style: The function 'print_ascii_tree' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/bss/checkpoint_bss.c:47:0: style: The function 'restore_bss' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/data/checkpoint_data.c:47:0: style: The function 'restore_data' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/mpatch/checkpoint_mpatch.c:13:0: style: The function 'restore_mpatch' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/arch/arm/reg/checkpoint_registers.c:15:0: style: The function 'restore_registers' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/checkpoint/stack/checkpoint_stack.c:57:0: style: The function 'restore_stack' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2611:0: style: The function 'sbc_decode_init' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2623:0: style: The function 'sbc_decoder_decode' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2629:0: style: The function 'sbc_decoder_uninit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:2659:0: style: The function 'sbc_encoder_uninit' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:1562:0: style: The function 'sbc_finish' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:1613:0: style: The function 'sbc_get_frame_duration' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:1691:0: style: The function 'sbc_get_implementation_info' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/volecommon/codec/sbc/sbc.c:1709:0: style: The function 'sbc_reinit' is never used. [unusedFunction]
+
+^
+software/libs/mpatch/mpatch/checkpoint_mpatch.c:21:0: style: The function 'setup_mpatch' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/vole/voles_main.c:417:0: style: The function 'voles_start' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/vole/voles_main.c:434:0: style: The function 'voles_stop' is never used. [unusedFunction]
+
+^
+software/external/ambiq_ble/profiles/vole/voles_main.c:408:0: style: The function 'voles_write_cback' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
